@@ -3,8 +3,8 @@ Test Task From Holiday Extra: Basic API Implementation
 
 To run this project following conditions should be true:
   
-  NodeJs is installed on system
-  MongoDB is Installed on system
+  1. NodeJs is installed on system
+  2. MongoDB is Installed on system
   
 Steps to run
   
