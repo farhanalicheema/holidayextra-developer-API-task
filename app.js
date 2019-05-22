@@ -26,3 +26,6 @@ fs.readdirSync(__dirname + "/controllers").forEach(function(controllerName) {
 
 app.listen(port);
 console.log("Application Started on http://localhost:" + port);
+
+
+module.exports = app;

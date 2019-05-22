@@ -2,15 +2,19 @@ const http = require("http");
 const validator = require("validator");
 const config = require("../configs/config");
 
-module.exports.makeGenericApiCall = function(req, method, path, callback) {
-  const postData = JSON.stringify(req.body);
+module.exports.makeGenericApiCall = function(data, method, path, callback) {
+  const postData = JSON.stringify(data);
   const options = {
     host: config.host,
     port: config.port,
     path: path,
     method: method,
     headers: {
-      "Authorization": "Basic " + new Buffer(config.authorizedUsername + ":" + config.authorizedPassword).toString("base64"),
+      Authorization:
+        "Basic " +
+        new Buffer(
+          config.authorizedUsername + ":" + config.authorizedPassword
+        ).toString("base64"),
       "Content-Type": "application/json",
       "Content-Length": Buffer.byteLength(postData)
     }
@@ -24,20 +28,18 @@ module.exports.makeGenericApiCall = function(req, method, path, callback) {
       responseString += chunk;
     });
     apiResponse.on("end", () => {
-      if (apiResponse.statusCode >= 200 && apiResponse.statusCode < 300) {
-        if (validator.isJSON(responseString)) {
-          callback(null, JSON.parse(responseString));
-        } else {
-          callback(null, responseString);
-        }
-      } else {
-        callback(apiResponse.headers["response-description"], null);
-      }
+      if (validator.isJSON(responseString))
+        responseString = JSON.parse(responseString);
+      callback(
+        apiResponse.statusCode,
+        apiResponse.headers["response-description"],
+        responseString
+      );
     });
 
-    req.on("error", e => {
+    apiResponse.on("error", e => {
       console.error(e);
-      callback("Oops, Something went wrong UIERR1", null);
+      callback(500, "Oops, Something went wrong UIERR1", null);
     });
   });
 

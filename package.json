@@ -3,9 +3,11 @@
   "title": "Creative",
   "version": "3.3.7+1",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "test": "jest"
   },
   "devDependencies": {
+    "jest": "^24.8.0",
     "nodemon": "^1.12.1"
   },
   "dependencies": {

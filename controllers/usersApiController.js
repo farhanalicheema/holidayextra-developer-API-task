@@ -64,7 +64,7 @@ module.exports = function(app) {
         familyName: req.body.familyName
       });
 
-      user.save(function(err) {
+      user.save(function(err, repo) {
         if (err) {
           console.log(err);
           res.statusCode = 500;
@@ -75,6 +75,7 @@ module.exports = function(app) {
           res.end();
         } else {
           res.statusCode = 201;
+          res.json(repo);
           res.end();
         }
       });
