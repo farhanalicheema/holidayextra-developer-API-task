@@ -1,0 +1,21 @@
+{
+  "name": "creative",
+  "title": "Creative",
+  "version": "3.3.7+1",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "body-parser": "^1.18.1",
+    "express": "^4.15.3",
+    "mongodb": "^3.2.4",
+    "mongoose": "^5.5.7",
+    "random-string": "^0.2.0",
+    "swig": "^1.4.2",
+    "validator": "^10.11.0"
+  }
+}

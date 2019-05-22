@@ -1,0 +1,8 @@
+{
+    "envoirement":"development",
+    "host":"localhost",
+    "port":3000,
+    "dbURI": "mongodb://localhost/holidayextra",
+    "authorizedUsername": "farhan",
+    "authorizedPassword": "ali"
+}
