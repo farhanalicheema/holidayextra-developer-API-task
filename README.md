@@ -8,5 +8,5 @@ To run this project following conditions should be true:
   
 Steps to run
   
-  npm install
-  npm start
+  1.  npm install
+  2.  npm start
