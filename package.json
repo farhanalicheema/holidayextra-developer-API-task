@@ -1,7 +1,8 @@
 {
-  "name": "creative",
-  "title": "Creative",
-  "version": "3.3.7+1",
+  "name": "holidayextra-developer-API-task",
+  "title": "Holiday Extra",
+  "author": "Farhan Ali",
+  "version": "0.0.1",
   "scripts": {
     "start": "nodemon app.js",
     "test": "jest"
