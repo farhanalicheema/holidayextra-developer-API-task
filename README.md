@@ -1,4 +1,4 @@
-# holidayextra-developer-API-task.md
+# holidayextra-developer-API-task
 Test Task From Holiday Extra: Basic API Implementation
 
 To run this project following conditions should be true:
