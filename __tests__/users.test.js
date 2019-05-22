@@ -1,6 +1,7 @@
-const apiHelpers = require("../helpers/apiHelpers");
 describe("Tests For User API", () => {
-  
+  process.env.NODE_ENV = 'test';
+  const apiHelpers = require("../helpers/apiHelpers");
+
   let testUserId = '';
   test("Create New User", done => {
     apiHelpers.makeGenericApiCall(
